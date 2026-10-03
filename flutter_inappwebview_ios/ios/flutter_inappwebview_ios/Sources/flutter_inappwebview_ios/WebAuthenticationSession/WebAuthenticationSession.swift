@@ -53,7 +53,7 @@ public class WebAuthenticationSession: NSObject, ASWebAuthenticationPresentation
     }
     
     public func canStart() -> Bool {
-        guard let session = session else {
+        guard let session = session, plugin?.window != nil else {
             return false
         }
         if #available(iOS 13.4, *), let session = session as? ASWebAuthenticationSession {
@@ -63,7 +63,7 @@ public class WebAuthenticationSession: NSObject, ASWebAuthenticationPresentation
     }
     
     public func start() -> Bool {
-        guard let session = session else {
+        guard let session = session, plugin?.window != nil else {
             return false
         }
         var started = false
@@ -91,7 +91,7 @@ public class WebAuthenticationSession: NSObject, ASWebAuthenticationPresentation
     
     @available(iOS 12.0, *)
     public func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
-        return UIApplication.shared.windows.first { $0.isKeyWindow } ?? ASPresentationAnchor()
+        return plugin?.window ?? ASPresentationAnchor()
     }
     
     public func dispose() {
