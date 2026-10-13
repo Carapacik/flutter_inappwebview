@@ -5,7 +5,7 @@
 //
 // Uses WPE WebKit for offscreen web rendering.
 // Supports two APIs:
-// - WPEPlatform (HAVE_WPE_PLATFORM): New modern API for WPE WebKit 2.40+
+// - WPEPlatform (HAVE_WPE_PLATFORM): WPEPlatform API for WPE WebKit 2.52+
 // - WPEBackend-FDO (HAVE_WPE_BACKEND_LEGACY): Legacy API for older systems
 //
 // WPE WebKit is designed for embedded systems and offers excellent offscreen rendering
@@ -18,7 +18,7 @@
 // - Direct OpenGL texture export (zero-copy when supported)
 //
 // Required packages (Ubuntu/Debian):
-//   - libwpe-1.0-dev (or build from source)
+//   - libwpe-1.0-dev (legacy FDO backend only)
 //   - wpewebkit (build from source or use Flatpak)
 //   - wpe-platform-headless-2.0 (recommended) OR wpebackend-fdo-1.0-dev (legacy)
 //
